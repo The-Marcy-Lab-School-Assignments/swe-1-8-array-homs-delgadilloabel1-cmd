@@ -1,17 +1,30 @@
 // find
-const getUserById = () => { };
+const getUserById = (arr, id) => {
+  return arr.find(obj => obj.id === id)
+};
 
 // findIndex
-const getIndexOfApple = () => { };
+const getIndexOfApple = (arr) => {
+  return arr.findIndex(obj => obj.name === 'apple')
+};
 
 // reduce
-const getSquaredTotal = () => { };
+const getSquaredTotal = (arr) => {
+  return arr.reduce((currentSum, currentNum) => {
+    return currentNum ** 2 + currentSum;
+  }, 0)
+
+};
 
 // every
-const hasOnlyEvenNumbers = () => { };
+const hasOnlyEvenNumbers = (arr) => {
+  return arr.length > 0 && arr.every(num => num % 2 === 0)
+};
 
 // some
-const anyGreaterThan10 = () => { };
+const anyGreaterThan10 = (arr) => {
+  return arr.some(num => num > 10)
+};
 
 // Use your judgement to decide which array method to use!
 const roundAll = () => { };
