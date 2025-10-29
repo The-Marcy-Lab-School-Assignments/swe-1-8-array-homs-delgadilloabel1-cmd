@@ -27,19 +27,44 @@ const anyGreaterThan10 = (arr) => {
 };
 
 // Use your judgement to decide which array method to use!
-const roundAll = () => { };
+const roundAll = (arr) => {
+  return arr.map(num => Math.round(num))
+};
 
-const onlyStrings = () => { };
+const onlyStrings = (arr) => {
+  return arr.filter(str => typeof str === 'string')
+};
 
-const stringsToLength = () => { };
+const stringsToLength = (arr) => {
+  return arr.map(str => str.length)
+};
 
-const totalGreaterThanGiven = () => { };
+const totalGreaterThanGiven = (arr, num) => {
+  const sum = arr.reduce((currentSum, currentNum) => {
+    return currentNum + currentSum
+  }, 0)
+  return sum > num
+};
 
-const numberOfLongWords = () => { };
+const numberOfLongWords = (arr) => {
+  const char = arr.filter(num => num.length > 4)
+  if (char.length > 0) {
+    return char.length
+  } else {
+    return 0
+  }
+};
 
-const numberOfCharacters = () => { };
+const numberOfCharacters = (arr) => {
+  arr.filter
+};
 
-const removeJerkFromCompany = () => { };
+const removeJerkFromCompany = (arr) => {
+  const remove = arr.filter(persona => persona.personality === 'jerk')
+  if (remove !== -1) {
+    arr.splice(remove, 1)
+  }
+};
 
 const chosenCoordinates = () => { };
 
