@@ -55,29 +55,58 @@ const numberOfLongWords = (arr) => {
   }
 };
 
-const numberOfCharacters = (arr) => {
-  arr.filter
+const numberOfCharacters = (str) => {
+  const arr = str.split("")
+  return freq = arr.reduce((freq, currentChar) => {
+    if (!freq[currentChar]) {
+      freq[currentChar] = 1;
+    } else {
+      freq[currentChar]++
+    }
+    return freq
+  }, {})
 };
 
 const removeJerkFromCompany = (arr) => {
-  const remove = arr.filter(persona => persona.personality === 'jerk')
+  const remove = arr.findIndex(persona => persona.personality === 'jerk')
   if (remove !== -1) {
     arr.splice(remove, 1)
   }
 };
 
-const chosenCoordinates = () => { };
+const chosenCoordinates = (arr, num) => {
+  return arr.find(pair => pair[0] + pair[1] === num)
+};
 
 // Sorting Functions
-const sortWords = () => { };
+const sortWords = (arr) => {
+  return [...arr].sort()
+};
 
-const sortNumbers = () => { };
+const sortNumbers = (arr) => {
+  return [...arr].sort((a, b) => a - b)
+};
 
-const sortNumbersBetter = () => { };
+const sortNumbersBetter = (arr, boolean) => {
+  if (boolean === true) {
+    return [...arr].sort((a, b) => b - a)
+  } else {
+    return [...arr].sort((a, b) => a - b)
+  }
 
-const sortUsersByOrder = () => { };
+};
 
-const sortUsersByName = () => { };
+const sortUsersByOrder = (arr) => {
+  return [...arr].sort((a, b) => a.order - b.order)
+};
+
+const sortUsersByName = (arr) => {
+  return [...arr].sort((a, b) => {
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+    return nameA.localeCompare(nameB)
+  })
+};
 
 module.exports = {
   getUserById,
